@@ -19,6 +19,7 @@ s.parentNode.insertBefore(t,s);
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '1102271518131130');
+fbq('track', 'PageView');
 fbq('track', 'ViewContent');
 </script>
 <style>
@@ -226,7 +227,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>1x revisi gratis</li>
           <li><div class="chk"></div>Garansi 15 hari</li>
         </ul>
-        <a href="https://wa.link/ofc9h6" class="pbtn pbtn-o">Pilih Starter</a>
+        <button class="pbtn pbtn-o btn-order" data-paket="Starter Landing Page">Pilih Starter</button>
       </div>
       <div class="pc hot">
         <div class="hbadge">Terpopuler</div>
@@ -241,7 +242,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>3x revisi gratis</li>
           <li><div class="chk"></div>Garansi 1 bulan</li>
         </ul>
-        <a href="https://wa.link/ofc9h6" class="pbtn pbtn-f">Pilih Growth</a>
+        <button class="pbtn pbtn-f btn-order" data-paket="Growth Landing Page">Pilih Growth</button>
       </div>
       <div class="pc">
         <div class="ptier">Ultimate</div>
@@ -254,7 +255,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>5x revisi gratis</li>
           <li><div class="chk"></div>Garansi 1,5 bulan</li>
         </ul>
-        <a href="https://wa.link/ofc9h6" class="pbtn pbtn-o">Pilih Ultimate</a>
+        <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Landing Page">Pilih Ultimate</button>
       </div>
     </div>
   </div>
@@ -272,7 +273,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>2x revisi gratis</li>
           <li><div class="chk"></div>Garansi 15 hari</li>
         </ul>
-        <a href="https://wa.link/ofc9h6" class="pbtn pbtn-o">Pilih Starter</a>
+        <button class="pbtn pbtn-o btn-order" data-paket="Starter Company Profile">Pilih Starter</button>
       </div>
       <div class="pc hot">
         <div class="hbadge">Terpopuler</div>
@@ -287,10 +288,10 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>2 email bisnis</li>
           <li><div class="chk"></div>3x revisi + garansi 1 bulan</li>
         </ul>
-        <a href="https://wa.link/ofc9h6" class="pbtn pbtn-f">Pilih Growth</a>
+        <button class="pbtn pbtn-f btn-order" data-paket="Growth Company Profile">Pilih Growth</button>
       </div>
       <div class="pc">
-        <div class="ptier">Executive</div>
+        <div class="ptier">Ultimate</div>
         <div class="pamt">Rp 6,5 jt <span>/ proyek</span></div>
         <ul class="plist">
           <li><div class="chk"></div>8–10 halaman + fitur request</li>
@@ -300,7 +301,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>3 email bisnis</li>
           <li><div class="chk"></div>5x revisi + garansi 1,5 bulan</li>
         </ul>
-        <a href="https://wa.link/ofc9h6" class="pbtn pbtn-o">Pilih Executive</a>
+        <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Company Profile">Pilih Ultimate</button>
       </div>
     </div>
   </div>
@@ -318,7 +319,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>Domain + hosting 6 bulan</li>
           <li><div class="chk"></div>Garansi 15 hari</li>
         </ul>
-        <button class="pbtn pbtn-o">Pilih Starter</button>
+        <button class="pbtn pbtn-o btn-order" data-paket="Starter Ecommerce">Pilih Starter</button>
       </div>
       <div class="pc hot">
         <div class="hbadge">Terpopuler</div>
@@ -332,7 +333,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>SEO on-page basic</li>
           <li><div class="chk"></div>3x revisi + garansi 1 bulan</li>
         </ul>
-        <button class="pbtn pbtn-f">Pilih Growth</button>
+        <button class="pbtn pbtn-f btn-order" data-paket="Growth Ecommerce">Pilih Growth</button>
       </div>
       <div class="pc">
         <div class="ptier">Ultimate</div>
@@ -345,7 +346,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>Email notifikasi otomatis</li>
           <li><div class="chk"></div>5x revisi + garansi 1,5 bulan</li>
         </ul>
-        <button class="pbtn pbtn-o">Pilih Ultimate</button>
+        <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Ecommerce">Pilih Ultimate</button>
       </div>
     </div>
   </div>
@@ -363,11 +364,11 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>Hosting VPS / shared</li>
           <li><div class="chk"></div>2x revisi + garansi 1 bulan</li>
         </ul>
-        <button class="pbtn pbtn-o">Pilih Basic</button>
+        <button class="pbtn pbtn-o btn-order" data-paket="Starter Custom System">Pilih Starter</button>
       </div>
       <div class="pc hot">
         <div class="hbadge">Recommended</div>
-        <div class="ptier">Professional</div>
+        <div class="ptier">Growth</div>
         <div class="pamt">Rp 10 jt <span>/ proyek</span></div>
         <ul class="plist">
           <li><div class="chk"></div>Sistem 3-5 modul (klien, karyawan, dll)</li>
@@ -377,10 +378,10 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>API integration (opsional)</li>
           <li><div class="chk"></div>3x revisi + garansi 1,5 bulan</li>
         </ul>
-        <button class="pbtn pbtn-f">Pilih Professional</button>
+        <button class="pbtn pbtn-f btn-order" data-paket="Growth Custom System">Pilih Growth</button>
       </div>
       <div class="pc">
-        <div class="ptier">Enterprise</div>
+        <div class="ptier">Ultimate</div>
         <div class="pamt">Custom <span>/ hubungi kami</span></div>
         <ul class="plist">
           <li><div class="chk"></div>Modul tak terbatas</li>
@@ -390,7 +391,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
           <li><div class="chk"></div>SLA & maintenance kontrak</li>
           <li><div class="chk"></div>Revisi unlimited selama development</li>
         </ul>
-        <button class="pbtn pbtn-o">Diskusi Dulu</button>
+        <button class="pbtn pbtn-o btn-order" data-paket="Diskusi Dulu">Diskusi Dulu</button>
       </div>
     </div>
   </div>
@@ -409,7 +410,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
         <li><div class="chk"></div>Domain + hosting 6 bulan</li>
         <li><div class="chk"></div>Mobile-friendly</li>
       </ul>
-      <button class="pbtn pbtn-o">Pilih Starter</button>
+      <button class="pbtn pbtn-o btn-order" data-paket="Starter Tour & Travel">Pilih Starter</button>
     </div>
 
     <div class="pc hot">
@@ -424,7 +425,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
         <li><div class="chk"></div>SEO dasar</li>
         <li><div class="chk"></div>Hosting 1 tahun</li>
       </ul>
-      <button class="pbtn pbtn-f">Pilih Growth</button>
+      <button class="pbtn pbtn-f btn-order" data-paket="Growth Tour & Travel">Pilih Growth</button>
     </div>
 
     <div class="pc">
@@ -438,7 +439,7 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
         <li><div class="chk"></div>Email notifikasi otomatis</li>
         <li><div class="chk"></div>Integrasi payment gateway</li>
       </ul>
-      <button class="pbtn pbtn-o">Pilih Ultimate</button>
+      <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Tour & Travel">Pilih Ultimate</button>
     </div>
 
   </div>
@@ -533,6 +534,33 @@ function showTab(id,el){
     package: packageName
   });
 }
+
+function orderWA(paket){
+  const nomor = "6281226622421";
+
+  const pesan = `Halo, saya tertarik dengan paket ${paket}.
+
+Bisa bantu jelaskan detail fitur, harga, dan estimasi pengerjaan?
+
+Terima kasih 🙏`;
+
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Contact', { package: paket });
+    console.log("CONTACT:", paket);
+  }
+
+  const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+  window.open(url, '_blank');
+}
+
+// ambil semua tombol
+document.querySelectorAll('.btn-order').forEach(btn=>{
+  btn.addEventListener('click', function(e){
+    e.preventDefault(); // biar gak reload
+    const paket = this.dataset.paket;
+    orderWA(paket);
+  });
+});
 
 // ===== COUNTER ANIMATION =====
 const counters = document.querySelectorAll('.sn');
