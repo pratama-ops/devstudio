@@ -519,6 +519,19 @@ function showTab(id,el){
   document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('on'));
   document.getElementById('p-'+id).classList.add('on');
   el.classList.add('on');
+
+  // ===== TRACK EVENT =====
+  let packageName = '';
+
+  if(id === 'lp') packageName = 'landing_page';
+  if(id === 'cp') packageName = 'company_profile';
+  if(id === 'ec') packageName = 'ecommerce';
+  if(id === 'cs') packageName = 'custom_system';
+  if(id === 'tt') packageName = 'tour_travel';
+
+  fbq('trackCustom', 'ViewPackage', {
+    package: packageName
+  });
 }
 
 // ===== COUNTER ANIMATION =====
