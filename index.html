@@ -500,6 +500,20 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
 </footer>
 
 <script>
+  let engagedTracked = false;
+
+  window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  if (scrollPercent > 50 && !engagedTracked) {
+    fbq('trackCustom', 'EngagedView');
+    engagedTracked = true;
+  }
+});
+
+
 function showTab(id,el){
   document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('on'));
