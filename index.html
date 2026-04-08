@@ -135,8 +135,8 @@ footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;ma
     <a href="#layanan" class="btn-o">Lihat Layanan</a>
   </div>
   <div class="stats">
-    <div><div class="sn">30+</div><div class="sl">Proyek selesai</div></div>
-    <div><div class="sn">100%</div><div class="sl">Klien puas</div></div>
+    <div><div class="sn" data-target="50" data-suffix="+">0</div><div class="sl">Proyek selesai</div></div>
+    <div><div class="sn" data-target="99" data-suffix="%">0</div><div class="sl">Klien puas</div></div>
     <div><div class="sn">On-time</div><div class="sl">Delivery</div></div>
   </div>
 </div>
@@ -432,6 +432,40 @@ function showTab(id,el){
   document.getElementById('p-'+id).classList.add('on');
   el.classList.add('on');
 }
+
+// ===== COUNTER ANIMATION =====
+const counters = document.querySelectorAll('.sn');
+
+const animateCounter = (el) => {
+  const target = +el.getAttribute('data-target');
+  const suffix = el.getAttribute('data-suffix') || '';
+  let current = 0;
+  const increment = target / 60;
+
+  const update = () => {
+    current += increment;
+
+    if (current < target) {
+      el.innerText = Math.floor(current) + suffix;
+      requestAnimationFrame(update);
+    } else {
+      el.innerText = target + suffix;
+    }
+  };
+
+  update();
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+
+counters.forEach(counter => observer.observe(counter));
 </script>
 </body>
 </html>
