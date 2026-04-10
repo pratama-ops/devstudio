@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>DevStudio - Website Profesional untuk Bisnis & UMKM</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <script>
 !function(f,b,e,v,n,t,s){
 if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,578 +22,1360 @@ fbq('track', 'PageView');
 fbq('track', 'ViewContent');
 </script>
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{
-  scroll-behavior:smooth;
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --blue-light: #dbeafe;
+  --blue-xlight: #eff6ff;
+  --indigo: #6366f1;
+  --slate-900: #0f172a;
+  --slate-700: #334155;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50: #f8fafc;
+  --white: #ffffff;
+  --green: #22c55e;
+  --orange: #f97316;
+  --yellow: #fbbf24;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,.1);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,.12);
+  --shadow-blue: 0 8px 24px rgba(37,99,235,.25);
+  --shadow-green: 0 8px 24px rgba(34,197,94,.25);
 }
-:root{
-  --bg:#09090f;--bg2:#111118;--bg3:#18181f;
-  --bo:rgba(255,255,255,0.07);--bo2:rgba(255,255,255,0.13);
-  --ac:#7c6df0;--ac2:#a593f7;--acd:rgba(124,109,240,0.12);
-  --gr:#5dca8b;
-  --tx:#eeecff;--mu:#8a879f;--mu2:#55536a;
-  --fh:'Inter',sans-serif;--fb:'DM Sans',sans-serif;
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--slate-50);
+  color: var(--slate-900);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
 }
-body{background:var(--bg);color:var(--tx);font-family:var(--fb);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{text-decoration:none}
-nav{position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:rgba(9,9,15,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--bo)}
-.logo{font-family:var(--fh);font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--tx)}.logo span{color:var(--ac2)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--mu);font-size:14px;transition:color .2s}.nav-links a:hover{color:var(--tx)}
 
-.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(124,109,240,.11) 0%,transparent 70%);top:40%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,109,240,.1);border:1px solid rgba(124,109,240,.22);color:var(--ac2);font-size:12px;font-weight:500;padding:.35rem .9rem;border-radius:100px;margin-bottom:2rem;letter-spacing:.05em;text-transform:uppercase}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--gr);display:inline-block;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-h1{
-  font-family:var(--fh);
-  font-size:clamp(2.4rem,6vw,4rem);
-  font-weight:700; 
-  line-height:1.2; 
-  letter-spacing:-0.01em; 
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ===== NAVBAR ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--slate-200);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-h1 .hl{color:var(--ac2)}
-.hero-sub{font-size:1rem;color:var(--mu);max-width:480px;margin-bottom:2.5rem;font-weight:300;line-height:1.8}
-.ctas{display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center}
-.btn-p{background:var(--ac);color:#fff;padding:.8rem 2rem;border-radius:10px;font-family:var(--fb);font-size:15px;font-weight:500;cursor:pointer;border:none;transition:all .2s}.btn-p:hover{background:var(--ac2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,109,240,.3)}
-.btn-o{background:transparent;color:var(--tx);padding:.8rem 2rem;border-radius:10px;font-family:var(--fb);font-size:15px;font-weight:400;cursor:pointer;border:1px solid var(--bo2);transition:all .2s}.btn-o:hover{border-color:var(--ac2);color:var(--ac2)}
-.stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--bo)}
-.sn{font-family:var(--fh);font-size:2rem;font-weight:800;letter-spacing:-.02em}
-.sl{font-size:12.5px;color:var(--mu);margin-top:2px}
 
-sec{display:block;padding:5rem 2rem;max-width:1100px;margin:0 auto;scroll-margin-top:80px;}
-.stag{font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ac2);font-weight:500;margin-bottom:.6rem}
-h2{font-family:var(--fh);font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025em;line-height:1.2;margin-bottom:.9rem}
-.ssub{color:var(--mu);max-width:480px;font-weight:300;margin-bottom:3rem}
-.divider{max-width:1100px;margin:0 auto;height:1px;background:var(--bo)}
+.nav-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -.025em;
+  flex-shrink: 0;
+}
 
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
-.svc-card{background:var(--bg2);border:1px solid var(--bo);border-radius:14px;padding:1.6rem;transition:border-color .25s,transform .25s;position:relative;overflow:hidden}
-.svc-card::after{content:'';position:absolute;inset:0;background:var(--acd);opacity:0;transition:opacity .3s;border-radius:14px;pointer-events:none}
-.svc-card:hover{border-color:rgba(124,109,240,.38);transform:translateY(-3px)}.svc-card:hover::after{opacity:1}
-.sic{width:42px;height:42px;border-radius:10px;background:var(--acd);border:1px solid rgba(124,109,240,.18);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:19px}
-.svc-card h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.45rem;letter-spacing:-.01em}
-.svc-card p{font-size:13.5px;color:var(--mu);line-height:1.65}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:1rem}
-.tag{font-size:11px;background:rgba(255,255,255,.04);border:1px solid var(--bo);color:var(--mu);padding:3px 9px;border-radius:100px}
+.nav-links {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+}
 
-.ptabs{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.ptab{padding:.42rem 1.1rem;border-radius:8px;border:1px solid var(--bo);background:transparent;color:var(--mu);font-family:var(--fb);font-size:13px;cursor:pointer;transition:all .2s}
-.ptab.on{background:var(--ac);border-color:var(--ac);color:#fff}
-.ppanel{display:none}.ppanel.on{display:block}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem}
-.pc{background:var(--bg2);border:1px solid var(--bo);border-radius:14px;padding:1.6rem;transition:all .25s;position:relative}
-.pc.hot{border-color:rgba(124,109,240,.45);background:linear-gradient(145deg,rgba(124,109,240,.07),var(--bg2))}
-.hbadge{position:absolute;top:-1px;right:1.4rem;background:var(--ac);color:#fff;font-size:11px;font-weight:500;padding:.28rem .75rem;border-radius:0 0 8px 8px;letter-spacing:.02em}
-.ptier{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin-bottom:.7rem}
-.pamt{font-family:var(--fh);font-size:1.85rem;font-weight:800;letter-spacing:-.03em;margin-bottom:1.4rem}
-.pamt span{font-size:13px;color:var(--mu);font-family:var(--fb);font-weight:300}
-.plist{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.6rem}
-.plist li{font-size:13px;color:var(--mu);display:flex;gap:.55rem;align-items:flex-start;line-height:1.5}
-.chk{width:15px;height:15px;border-radius:50%;background:rgba(93,202,139,.12);border:1px solid rgba(93,202,139,.28);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
-.chk::after{content:'✓';font-size:8.5px;color:var(--gr)}
-.pbtn{width:100%;padding:.65rem;border-radius:9px;font-family:var(--fb);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s}
-.pbtn-o{background:transparent;border:1px solid var(--bo2);color:var(--tx)}.pbtn-o:hover{border-color:var(--ac2);color:var(--ac2)}
-.pbtn-f{background:var(--ac);border:none;color:#fff}.pbtn-f:hover{background:var(--ac2);box-shadow:0 6px 20px rgba(124,109,240,.3)}
+.nav-links a {
+  color: var(--slate-500);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+  position: relative;
+}
 
-.psteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:3rem}
-.pstep{background:var(--bg2);border:1px solid var(--bo);border-radius:14px;padding:1.5rem}
-.psn{font-family:var(--fh);font-size:2.2rem;font-weight:800;color:rgba(124,109,240,.18);line-height:1;margin-bottom:.65rem;letter-spacing:-.04em}
-.pstep h3{font-family:var(--fh);font-size:.93rem;font-weight:700;margin-bottom:.35rem;letter-spacing:-.01em}
-.pstep p{font-size:13px;color:var(--mu);line-height:1.6}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px;
+  transition: width .25s;
+}
 
-.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem;margin-top:3rem}
-.tc{background:var(--bg2);border:1px solid var(--bo);border-radius:14px;padding:1.6rem}
-.stars{color:#f5c97a;font-size:13px;letter-spacing:2px;margin-bottom:.9rem}
-.tq{font-size:13.5px;color:var(--mu);line-height:1.7;margin-bottom:1.2rem;font-style:italic}
-.ta{display:flex;align-items:center;gap:.7rem}
-.av{width:34px;height:34px;border-radius:50%;background:rgba(124,109,240,.18);border:1px solid rgba(124,109,240,.25);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:11px;font-weight:700;color:var(--ac2);flex-shrink:0}
-.an{font-size:13.5px;font-weight:500}
-.ar{font-size:12px;color:var(--mu)}
+.nav-links a:hover { color: var(--blue); }
+.nav-links a:hover::after { width: 100%; }
 
-.cta-box{max-width:1100px;margin:2rem auto 4rem;background:linear-gradient(135deg,rgba(124,109,240,.11),rgba(124,109,240,.03));border:1px solid rgba(124,109,240,.18);border-radius:20px;padding:4rem 3rem;text-align:center}
-.cta-box h2{margin-bottom:.9rem}
-.cta-box p{color:var(--mu);max-width:440px;margin:0 auto 2.2rem;font-weight:300}
+.nav-cta {
+  background: var(--blue);
+  color: var(--white) !important;
+  padding: .55rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: var(--shadow-blue);
+  transition: background .2s, transform .15s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
 
-footer{border-top:1px solid var(--bo);padding:1.75rem 2.5rem;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.fc{font-size:13px;color:var(--mu2)}
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  transition: background .2s;
+  z-index: 200;
+}
+.hamburger:hover { background: var(--slate-100); }
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--slate-700);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media(max-width:680px){
-  nav{padding:.85rem 1.25rem}.nav-links{display:none}
-  sec{padding:3.5rem 1.25rem}
-  .stats{gap:1.5rem}
-  .cta-box{padding:2.5rem 1.5rem;margin:1.5rem 1.25rem 3rem}
-  footer{flex-direction:column;align-items:flex-start}
+/* Mobile menu overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(15,23,42,.55);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.mobile-menu.open { opacity: 1; }
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--white);
+  box-shadow: -8px 0 40px rgba(0,0,0,.12);
+  padding: 5rem 2rem 2rem;
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.mobile-nav-links a {
+  display: block;
+  padding: .75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--slate-700);
+  border-radius: var(--radius-md);
+  transition: background .2s, color .2s;
+}
+.mobile-nav-links a:hover { background: var(--blue-xlight); color: var(--blue); }
+.mobile-nav-cta {
+  display: block;
+  margin-top: 1.5rem;
+  background: var(--blue);
+  color: var(--white) !important;
+  text-align: center;
+  padding: .85rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: .95rem;
+  box-shadow: var(--shadow-blue);
+}
+
+/* ===== HERO ===== */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-content { flex: 1; min-width: 280px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--blue-xlight);
+  border: 1px solid #bfdbfe;
+  color: var(--blue);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: .3rem .9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.6rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+h1 {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  margin-bottom: 1rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--indigo) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--slate-500);
+  max-width: 510px;
+  margin-bottom: 1.85rem;
+  line-height: 1.75;
+}
+
+.hero-ctas { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  padding: .9rem 1.85rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--shadow-blue);
+  transition: all .2s;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,99,235,.3); }
+
+.btn-ghost {
+  color: var(--slate-500);
+  font-size: .95rem;
+  padding: .9rem 1rem;
+  transition: color .2s;
+}
+.btn-ghost:hover { color: var(--blue); }
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.75rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--slate-200);
+  flex-wrap: wrap;
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--slate-900);
+}
+.stat-label { font-size: 12px; color: var(--slate-400); margin-top: 2px; }
+
+.hero-visual {
+  flex: 1;
+  min-width: 260px;
+  max-width: 460px;
+  position: relative;
+}
+
+.hero-img-wrap {
+  background: var(--white);
+  padding: .9rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--slate-200);
+  transform: rotate(2deg);
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+.hero-img-wrap:hover { transform: rotate(0deg); }
+.hero-img-wrap img { border-radius: var(--radius-lg); width: 100%; }
+
+.hero-badge-card {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: var(--white);
+  padding: .85rem 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--slate-200);
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.hero-badge-card i { color: var(--green); font-size: 1.5rem; }
+.hero-badge-card .label { font-size: 11px; color: var(--slate-400); }
+.hero-badge-card .value { font-weight: 700; font-size: 14px; }
+
+/* ===== SECTION COMMON ===== */
+section { scroll-margin-top: 72px; }
+
+.section-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--indigo);
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  margin-bottom: .75rem;
+}
+
+.section-sub {
+  color: var(--slate-500);
+  max-width: 480px;
+  font-size: .95rem;
+  line-height: 1.75;
+}
+
+/* ===== LAYANAN ===== */
+#layanan {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+}
+
+#layanan .header { text-align: center; margin-bottom: 3rem; }
+#layanan .header .section-sub { margin: 0 auto; }
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.bento-card {
+  background: var(--white);
+  padding: 1.6rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s, transform .25s;
+}
+.bento-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.bento-card.wide { grid-column: span 2; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+.bento-icon { font-size: 1.75rem; margin-bottom: .85rem; display: block; }
+
+.bento-badge {
+  display: inline-block;
+  background: var(--blue-light);
+  color: #1d4ed8;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: .22rem .72rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: .75rem;
+}
+
+.bento-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .4rem; }
+.bento-card p { font-size: 13.5px; color: var(--slate-500); line-height: 1.65; margin-bottom: .75rem; }
+
+.bento-tags { display: flex; gap: .4rem; flex-wrap: wrap; }
+.bento-tag {
+  background: var(--slate-100);
+  color: var(--slate-500);
+  font-size: 11.5px;
+  padding: .2rem .65rem;
+  border-radius: var(--radius-sm);
+}
+
+.bento-quote {
+  flex: 1;
+  min-width: 160px;
+  background: var(--slate-50);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed var(--slate-200);
+}
+
+/* ===== HARGA ===== */
+#harga {
+  background: var(--blue);
+  padding: 5rem 2rem;
+  scroll-margin-top: 72px;
+}
+
+.pricing-inner { max-width: 1100px; margin: 0 auto; }
+
+#harga .section-tag { color: #bfdbfe; }
+#harga .section-title { color: var(--white); }
+#harga .section-sub { color: #93c5fd; }
+#harga .header { margin-bottom: 2.5rem; }
+
+.ptabs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.ptab {
+  padding: .42rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all .2s;
+}
+.ptab.on { background: var(--white); color: var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.ptab.off { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); }
+.ptab.off:hover { background: rgba(255,255,255,.25); }
+
+.ppanel { display: none; }
+.ppanel.on { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+
+.pc {
+  background: var(--white);
+  color: var(--slate-900);
+  padding: 1.85rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--slate-200);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.pc:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.pc.hot { border: 2px solid #818cf8; }
+
+.pc-badge {
+  position: absolute;
+  top: -1px;
+  right: 1.5rem;
+  background: var(--indigo);
+  color: var(--white);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: .25rem .75rem;
+  border-radius: 0 0 8px 8px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.pc-tier {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--slate-400);
+  margin-bottom: .6rem;
+}
+
+.pc-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--blue);
+  margin-bottom: 1.25rem;
+}
+.pc-price span { font-size: 13px; color: var(--slate-400); font-weight: 400; }
+
+.plist { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.5rem; }
+.plist li { display: flex; gap: .55rem; align-items: flex-start; font-size: 13px; color: var(--slate-500); line-height: 1.5; }
+
+.chk {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(34,197,94,.12);
+  border: 1px solid rgba(34,197,94,.3);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #16a34a;
+  margin-top: 2px;
+}
+
+.pbtn {
+  width: 100%;
+  padding: .7rem;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.pbtn-o {
+  background: transparent;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+.pbtn-o:hover { background: var(--blue-xlight); }
+.pbtn-f {
+  background: var(--blue);
+  border: 2px solid var(--blue);
+  color: var(--white);
+}
+.pbtn-f:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+
+/* ===== PROSES ===== */
+#proses {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  scroll-margin-top: 72px;
+}
+
+#proses .header { text-align: center; margin-bottom: 3rem; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.step-card { text-align: center; }
+
+.step-num {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--blue-light);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto .85rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  transition: all .25s;
+}
+.step-card:hover .step-num { background: var(--blue); color: var(--white); }
+
+.step-card h4 { font-weight: 700; margin-bottom: .3rem; }
+.step-card p { font-size: 13px; color: var(--slate-400); line-height: 1.6; }
+
+/* ===== TESTIMONI ===== */
+#testimoni {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4.5rem;
+  scroll-margin-top: 72px;
+}
+
+#testimoni .header { text-align: center; margin-bottom: 2.5rem; }
+
+.tgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.tc {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  padding: 1.6rem;
+  transition: box-shadow .2s;
+}
+.tc:hover { box-shadow: var(--shadow-md); }
+
+.tc-stars { color: var(--yellow); font-size: 13px; letter-spacing: 2px; margin-bottom: .85rem; }
+.tc-quote { font-size: 13.5px; color: var(--slate-500); font-style: italic; margin-bottom: 1.25rem; line-height: 1.7; }
+
+.tc-author { display: flex; align-items: center; gap: .75rem; }
+.tc-av {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.tc-name { font-size: 13.5px; font-weight: 600; }
+.tc-role { font-size: 12px; color: var(--slate-400); }
+
+/* ===== CTA / FOOTER ===== */
+.cta-section {
+  background: var(--slate-900);
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 2rem 2.5rem;
+}
+
+.cta-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -.02em;
+}
+.cta-section p { color: var(--slate-400); max-width: 440px; margin: 0 auto 2.25rem; }
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  background: var(--green);
+  color: var(--white);
+  padding: 1rem 2.25rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--shadow-green);
+  transition: all .2s;
+}
+.btn-wa:hover { background: #16a34a; transform: translateY(-2px); }
+.btn-wa i { font-size: 1.4rem; }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 13px;
+  color: #475569;
+}
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { color: #475569; transition: color .2s; }
+.footer-links a:hover { color: var(--white); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+
+  .hero { padding: 3rem 1.25rem 2.5rem; gap: 2rem; }
+  .hero-visual { display: none; }
+  .hero-stats { gap: 1.5rem; }
+
+  #layanan { padding: 3rem 1.25rem; }
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-card.wide { grid-column: span 1; flex-direction: column; }
+
+  #harga { padding: 3.5rem 1.25rem; }
+  .ptabs { gap: .4rem; }
+  .ptab { font-size: 12.5px; padding: .38rem .9rem; }
+
+  #proses { padding: 3.5rem 1.25rem; }
+  #testimoni { padding: 2rem 1.25rem 3.5rem; }
+
+  .cta-section { padding: 3.5rem 1.25rem 2rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
+  .pc-price { font-size: 1.5rem; }
 }
 </style>
 </head>
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <nav>
-  <div class="logo">Dev<span>Studio</span></div>
+  <div class="nav-logo">DevStudio</div>
+
   <ul class="nav-links">
     <li><a href="#layanan">Layanan</a></li>
     <li><a href="#harga">Harga</a></li>
     <li><a href="#proses">Proses</a></li>
     <li><a href="#testimoni">Testimoni</a></li>
   </ul>
+
+  <a href="https://wa.link/ofc9h6" target="_blank" class="nav-cta">Konsultasi Gratis</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
-<div class="hero">
-  <div class="badge"><span class="dot"></span> Open for project</div>
-  <h1>Website Profesional yang<br><span class="hl">Benar-Benar Bekerja</span></h1>
-  <p class="hero-sub">DevStudio membantu bisnis dan UMKM hadir secara digital — dari landing page sederhana hingga sistem custom yang kompleks.</p>
-  <div class="ctas">
-    <a href="https://wa.link/ofc9h6" class="btn-p">Konsultasi Gratis</a>
-    <a href="#layanan" class="btn-o">Lihat Layanan</a>
-  </div>
-  <div class="stats">
-    <div><div class="sn" data-target="50" data-suffix="+">0</div><div class="sl">Proyek selesai</div></div>
-    <div><div class="sn" data-target="99" data-suffix="%">0</div><div class="sl">Klien puas</div></div>
-    <div><div class="sn" data-target="98" data-suffix="%">0</div><div class="sl">On-time Delivery</div></div>
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-panel">
+    <ul class="mobile-nav-links">
+      <li><a href="#layanan" class="mobile-link">Layanan</a></li>
+      <li><a href="#harga" class="mobile-link">Harga</a></li>
+      <li><a href="#proses" class="mobile-link">Proses</a></li>
+      <li><a href="#testimoni" class="mobile-link">Testimoni</a></li>
+    </ul>
+    <a href="https://wa.link/ofc9h6" target="_blank" class="mobile-nav-cta">Konsultasi Gratis</a>
   </div>
 </div>
 
-<sec id="layanan">
-  <div class="stag">Layanan</div>
-  <h2>Semua kebutuhan digital<br>kamu, satu tempat</h2>
-  <p class="ssub">Website yang bukan cuma cantik, tapi punya tujuan — konversi, kepercayaan, atau efisiensi operasional.</p>
-  <div class="svc-grid">
-    <div class="svc-card">
-      <div class="sic"><i class="fa-solid fa-file-lines"></i></div>
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Open for project
+    </div>
+    <h1>Website Profesional yang <span class="gradient-text">Benar-Benar Bekerja</span></h1>
+    <p class="hero-sub">DevStudio membantu bisnis dan UMKM hadir secara digital — dari landing page sederhana hingga sistem custom yang kompleks.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.link/ofc9h6" target="_blank" class="btn-primary">Mulai Proyek Sekarang</a>
+      <a href="#layanan" class="btn-ghost">Lihat Layanan →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num counter" data-target="50" data-suffix="+">0</div>
+        <div class="stat-label">Proyek selesai</div>
+      </div>
+      <div>
+        <div class="stat-num counter" data-target="99" data-suffix="%">0</div>
+        <div class="stat-label">Klien puas</div>
+      </div>
+      <div>
+        <div class="stat-num counter" data-target="98" data-suffix="%">0</div>
+        <div class="stat-label">On-time delivery</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=700" alt="Dashboard Preview">
+    </div>
+    <div class="hero-badge-card">
+      <i class="fas fa-check-circle"></i>
+      <div>
+        <div class="label">Status Proyek</div>
+        <div class="value">Live & SEO-Ready</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== LAYANAN ===== -->
+<section id="layanan">
+  <div class="header">
+    <div class="section-tag">Layanan</div>
+    <h2 class="section-title">Semua kebutuhan digital kamu, satu tempat</h2>
+    <p class="section-sub">Website yang bukan cuma cantik, tapi punya tujuan — konversi, kepercayaan, atau efisiensi operasional.</p>
+  </div>
+
+  <div class="bento-grid">
+    <!-- Custom System - wide card -->
+    <div class="bento-card wide">
+      <div style="flex:1;min-width:200px;">
+        <span class="bento-badge">Custom System</span>
+        <h3>Sistem Bisnis Sesuai Kebutuhan</h3>
+        <p>Monitoring logistik, manajemen klien, karyawan, dan lainnya dengan Node.js & MySQL.</p>
+        <div class="bento-tags">
+          <span class="bento-tag">Role-based</span>
+          <span class="bento-tag">API Integration</span>
+          <span class="bento-tag">Real-time</span>
+          <span class="bento-tag">Node.js</span>
+          <span class="bento-tag">MySQL</span>
+        </div>
+      </div>
+      <div class="bento-quote" style="flex:1;min-width:160px;">
+        <i class="fas fa-microchip" style="font-size:2rem;color:var(--indigo);display:block;margin-bottom:.75rem;"></i>
+        <p style="font-size:13px;font-style:italic;color:var(--slate-400);">"Sistem monitoring karyawan beneran memudahkan operasional kami."</p>
+      </div>
+    </div>
+
+    <!-- Landing Page -->
+    <div class="bento-card">
+      <i class="fas fa-rocket bento-icon" style="color:var(--indigo);"></i>
       <h3>Landing Page</h3>
-      <p>Satu halaman fokus konversi. Cocok untuk promosi produk, pre-order, atau campaign iklan.</p>
-      <div class="tags"><span class="tag">Responsive</span><span class="tag">SEO-ready</span><span class="tag">Fast</span></div>
+      <p>Satu halaman fokus konversi. Cocok untuk promosi produk atau campaign iklan.</p>
+      <div class="bento-tags">
+        <span class="bento-tag">Responsive</span>
+        <span class="bento-tag">SEO-ready</span>
+        <span class="bento-tag">Fast</span>
+      </div>
     </div>
-    <div class="svc-card">
-      <div class="sic"><i class="fa-solid fa-building"></i></div>
-      <h3>Company Profile</h3>
-      <p>Tampil profesional dan dipercaya. Website multi-halaman yang merepresentasikan bisnis kamu secara lengkap.</p>
-      <div class="tags"><span class="tag">Multi-page</span><span class="tag">Mobile-first</span><span class="tag">SSL</span></div>
-    </div>
-    <div class="svc-card">
-      <div class="sic"><i class="fa-solid fa-cart-shopping"></i></div>
+
+    <!-- E-Commerce -->
+    <div class="bento-card">
+      <i class="fas fa-shopping-bag bento-icon" style="color:var(--orange);"></i>
       <h3>E-Commerce</h3>
-      <p>Katalog produk dinamis, keranjang belanja, hingga integrasi payment gateway siap pakai.</p>
-      <div class="tags"><span class="tag">Xendit</span><span class="tag">Midtrans</span><span class="tag">Dashboard</span></div>
+      <p>Katalog dinamis dengan integrasi payment gateway Midtrans/Xendit.</p>
+      <div class="bento-tags">
+        <span class="bento-tag">Xendit</span>
+        <span class="bento-tag">Midtrans</span>
+        <span class="bento-tag">Dashboard</span>
+      </div>
     </div>
-    <div class="svc-card">
-  <div class="sic"><i class="fa-solid fa-globe"></i></div>
-  <h3>Website Tour & Travel</h3>
-  <p>Website khusus bisnis travel dengan katalog paket, itinerary, dan sistem booking yang memudahkan pelanggan.</p>
-  <div class="tags">
-    <span class="tag">Booking</span>
-    <span class="tag">Itinerary</span>
-    <span class="tag">WhatsApp</span>
-  </div>
-</div>
-    <div class="svc-card">
-      <div class="sic"><i class="fa-solid fa-gear"></i></div>
-      <h3>Custom System</h3>
-      <p>Sistem berbasis web sesuai kebutuhan bisnis — monitoring logistik, manajemen klien, karyawan, dan lainnya.</p>
-      <div class="tags"><span class="tag">Node.js</span><span class="tag">MySQL</span><span class="tag">Role-based</span></div>
+
+    <!-- Company Profile -->
+    <div class="bento-card">
+      <i class="fas fa-building bento-icon" style="color:#3b82f6;"></i>
+      <h3>Company Profile</h3>
+      <p>Multi-halaman profesional untuk merepresentasikan bisnis Anda secara lengkap.</p>
+      <div class="bento-tags">
+        <span class="bento-tag">Multi-page</span>
+        <span class="bento-tag">Mobile-first</span>
+        <span class="bento-tag">SSL</span>
+      </div>
+    </div>
+
+    <!-- Tour & Travel -->
+    <div class="bento-card">
+      <i class="fas fa-plane bento-icon" style="color:var(--green);"></i>
+      <h3>Tour & Travel</h3>
+      <p>Sistem booking, itinerary, dan katalog paket wisata khusus bisnis travel.</p>
+      <div class="bento-tags">
+        <span class="bento-tag">Booking</span>
+        <span class="bento-tag">Itinerary</span>
+        <span class="bento-tag">WhatsApp</span>
+      </div>
     </div>
   </div>
-</sec>
+</section>
 
-<div class="divider"></div>
+<!-- ===== HARGA ===== -->
+<section id="harga">
+  <div class="pricing-inner">
+    <div class="header">
+      <div class="section-tag">Harga</div>
+      <h2 class="section-title">Transparan & sesuai kebutuhan kamu</h2>
+      <p class="section-sub">Pilih tipe website yang kamu butuhkan. Konsultasi gratis sebelum deal.</p>
+      <div class="ptabs">
+        <button class="ptab on" onclick="showTab('lp', this)">Landing Page</button>
+        <button class="ptab off" onclick="showTab('cp', this)">Company Profile</button>
+        <button class="ptab off" onclick="showTab('ec', this)">E-Commerce</button>
+        <button class="ptab off" onclick="showTab('tt', this)">Tour & Travel</button>
+        <button class="ptab off" onclick="showTab('cs', this)">Custom System</button>
+      </div>
+    </div>
 
-<sec id="harga">
-  <div class="stag">Harga</div>
-  <h2>Transparan & sesuai<br>kebutuhan kamu</h2>
-  <p class="ssub">Pilih tipe website yang kamu butuhkan. Konsultasi gratis sebelum deal.</p>
-
-  <div class="ptabs">
-    <button class="ptab on" onclick="showTab('lp',this)">Landing Page</button>
-    <button class="ptab" onclick="showTab('cp',this)">Company Profile</button>
-    <button class="ptab" onclick="showTab('ec',this)">E-Commerce</button>
-    <button class="ptab" onclick="showTab('tt',this)">Tour & Travel</button>
-    <button class="ptab" onclick="showTab('cs',this)">Custom System</button>
-  </div>
-
-  <div class="ppanel on" id="p-lp">
-    <div class="pgrid">
+    <!-- Landing Page -->
+    <div class="ppanel on" id="p-lp">
       <div class="pc">
-        <div class="ptier">Starter</div>
-        <div class="pamt">Rp 1,75 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Starter</div>
+        <div class="pc-price">Rp 1,75 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>1 halaman landing page</li>
-          <li><div class="chk"></div>Domain .com gratis</li>
-          <li><div class="chk"></div>Hosting 6 bulan</li>
-          <li><div class="chk"></div>Mobile-friendly</li>
-          <li><div class="chk"></div>1 email bisnis + SSL</li>
-          <li><div class="chk"></div>1x revisi gratis</li>
-          <li><div class="chk"></div>Garansi 15 hari</li>
+          <li><div class="chk">✓</div>1 halaman landing page</li>
+          <li><div class="chk">✓</div>Domain .com gratis</li>
+          <li><div class="chk">✓</div>Hosting 6 bulan</li>
+          <li><div class="chk">✓</div>Mobile-friendly</li>
+          <li><div class="chk">✓</div>1 email bisnis + SSL</li>
+          <li><div class="chk">✓</div>1x revisi gratis</li>
+          <li><div class="chk">✓</div>Garansi 15 hari</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Starter Landing Page">Pilih Starter</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Starter Landing Page')">Pilih Starter</button>
       </div>
       <div class="pc hot">
-        <div class="hbadge">Terpopuler</div>
-        <div class="ptier">Growth</div>
-        <div class="pamt">Rp 2,75 jt <span>/ proyek</span></div>
+        <div class="pc-badge">Terpopuler</div>
+        <div class="pc-tier">Growth</div>
+        <div class="pc-price">Rp 2,75 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Hosting 1 tahun</li>
-          <li><div class="chk"></div>Desain lebih kompleks (CTA, Form, Galeri)</li>
-          <li><div class="chk"></div>Tombol WhatsApp langsung</li>
-          <li><div class="chk"></div>2 email bisnis</li>
-          <li><div class="chk"></div>SEO on-page basic</li>
-          <li><div class="chk"></div>3x revisi gratis</li>
-          <li><div class="chk"></div>Garansi 1 bulan</li>
+          <li><div class="chk">✓</div>Hosting 1 tahun</li>
+          <li><div class="chk">✓</div>Desain kompleks (CTA, Form, Galeri)</li>
+          <li><div class="chk">✓</div>Tombol WhatsApp langsung</li>
+          <li><div class="chk">✓</div>2 email bisnis</li>
+          <li><div class="chk">✓</div>SEO on-page basic</li>
+          <li><div class="chk">✓</div>3x revisi gratis</li>
+          <li><div class="chk">✓</div>Garansi 1 bulan</li>
         </ul>
-        <button class="pbtn pbtn-f btn-order" data-paket="Growth Landing Page">Pilih Growth</button>
+        <button class="pbtn pbtn-f" onclick="orderWA('Growth Landing Page')">Pilih Growth</button>
       </div>
       <div class="pc">
-        <div class="ptier">Ultimate</div>
-        <div class="pamt">Rp 3,75 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Ultimate</div>
+        <div class="pc-price">Rp 3,75 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Hingga 2 halaman tambahan</li>
-          <li><div class="chk"></div>Fitur khusus (popup, accordion, dll)</li>
-          <li><div class="chk"></div>Animasi interaktif</li>
-          <li><div class="chk"></div>Speed optimization</li>
-          <li><div class="chk"></div>5x revisi gratis</li>
-          <li><div class="chk"></div>Garansi 1,5 bulan</li>
+          <li><div class="chk">✓</div>Hingga 2 halaman tambahan</li>
+          <li><div class="chk">✓</div>Fitur khusus (popup, accordion, dll)</li>
+          <li><div class="chk">✓</div>Animasi interaktif</li>
+          <li><div class="chk">✓</div>Speed optimization</li>
+          <li><div class="chk">✓</div>5x revisi gratis</li>
+          <li><div class="chk">✓</div>Garansi 1,5 bulan</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Landing Page">Pilih Ultimate</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Ultimate Landing Page')">Pilih Ultimate</button>
       </div>
     </div>
-  </div>
 
-  <div class="ppanel" id="p-cp">
-    <div class="pgrid">
+    <!-- Company Profile -->
+    <div class="ppanel" id="p-cp">
       <div class="pc">
-        <div class="ptier">Starter</div>
-        <div class="pamt">Rp 2,5 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Starter</div>
+        <div class="pc-price">Rp 2,5 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>3 halaman utama (Home, About, Contact)</li>
-          <li><div class="chk"></div>Domain .com + hosting 6 bulan</li>
-          <li><div class="chk"></div>Form kontak ke WhatsApp</li>
-          <li><div class="chk"></div>1 email bisnis + SSL</li>
-          <li><div class="chk"></div>2x revisi gratis</li>
-          <li><div class="chk"></div>Garansi 15 hari</li>
+          <li><div class="chk">✓</div>3 halaman (Home, About, Contact)</li>
+          <li><div class="chk">✓</div>Domain .com + hosting 6 bulan</li>
+          <li><div class="chk">✓</div>Form kontak ke WhatsApp</li>
+          <li><div class="chk">✓</div>1 email bisnis + SSL</li>
+          <li><div class="chk">✓</div>2x revisi gratis</li>
+          <li><div class="chk">✓</div>Garansi 15 hari</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Starter Company Profile">Pilih Starter</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Starter Company Profile')">Pilih Starter</button>
       </div>
       <div class="pc hot">
-        <div class="hbadge">Terpopuler</div>
-        <div class="ptier">Growth</div>
-        <div class="pamt">Rp 4 jt <span>/ proyek</span></div>
+        <div class="pc-badge">Terpopuler</div>
+        <div class="pc-tier">Growth</div>
+        <div class="pc-price">Rp 4 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>5–6 halaman lengkap</li>
-          <li><div class="chk"></div>Hosting 1 tahun</li>
-          <li><div class="chk"></div>Desain premium & clean</li>
-          <li><div class="chk"></div>Galeri foto & testimoni</li>
-          <li><div class="chk"></div>SEO on-page dasar</li>
-          <li><div class="chk"></div>2 email bisnis</li>
-          <li><div class="chk"></div>3x revisi + garansi 1 bulan</li>
+          <li><div class="chk">✓</div>5–6 halaman lengkap</li>
+          <li><div class="chk">✓</div>Hosting 1 tahun</li>
+          <li><div class="chk">✓</div>Desain premium & clean</li>
+          <li><div class="chk">✓</div>Galeri foto & testimoni</li>
+          <li><div class="chk">✓</div>SEO on-page dasar</li>
+          <li><div class="chk">✓</div>2 email bisnis</li>
+          <li><div class="chk">✓</div>3x revisi + garansi 1 bulan</li>
         </ul>
-        <button class="pbtn pbtn-f btn-order" data-paket="Growth Company Profile">Pilih Growth</button>
+        <button class="pbtn pbtn-f" onclick="orderWA('Growth Company Profile')">Pilih Growth</button>
       </div>
       <div class="pc">
-        <div class="ptier">Ultimate</div>
-        <div class="pamt">Rp 6,5 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Ultimate</div>
+        <div class="pc-price">Rp 6,5 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>8–10 halaman + fitur request</li>
-          <li><div class="chk"></div>Instagram feed / YouTube embed</li>
-          <li><div class="chk"></div>Animasi scroll & parallax</li>
-          <li><div class="chk"></div>Speed optimization</li>
-          <li><div class="chk"></div>3 email bisnis</li>
-          <li><div class="chk"></div>5x revisi + garansi 1,5 bulan</li>
+          <li><div class="chk">✓</div>8–10 halaman + fitur request</li>
+          <li><div class="chk">✓</div>Instagram feed / YouTube embed</li>
+          <li><div class="chk">✓</div>Animasi scroll & parallax</li>
+          <li><div class="chk">✓</div>Speed optimization</li>
+          <li><div class="chk">✓</div>3 email bisnis</li>
+          <li><div class="chk">✓</div>5x revisi + garansi 1,5 bulan</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Company Profile">Pilih Ultimate</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Ultimate Company Profile')">Pilih Ultimate</button>
       </div>
     </div>
-  </div>
 
-  <div class="ppanel" id="p-ec">
-    <div class="pgrid">
+    <!-- E-Commerce -->
+    <div class="ppanel" id="p-ec">
       <div class="pc">
-        <div class="ptier">Starter</div>
-        <div class="pamt">Rp 2,5 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Starter</div>
+        <div class="pc-price">Rp 2,5 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Landing page produk</li>
-          <li><div class="chk"></div>Gambar produk, harga, deskripsi</li>
-          <li><div class="chk"></div>Tombol beli → WhatsApp</li>
-          <li><div class="chk"></div>Testimoni & FAQ</li>
-          <li><div class="chk"></div>Domain + hosting 6 bulan</li>
-          <li><div class="chk"></div>Garansi 15 hari</li>
+          <li><div class="chk">✓</div>Landing page produk</li>
+          <li><div class="chk">✓</div>Gambar produk, harga, deskripsi</li>
+          <li><div class="chk">✓</div>Tombol beli → WhatsApp</li>
+          <li><div class="chk">✓</div>Testimoni & FAQ</li>
+          <li><div class="chk">✓</div>Domain + hosting 6 bulan</li>
+          <li><div class="chk">✓</div>Garansi 15 hari</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Starter Ecommerce">Pilih Starter</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Starter E-Commerce')">Pilih Starter</button>
       </div>
       <div class="pc hot">
-        <div class="hbadge">Terpopuler</div>
-        <div class="ptier">Growth</div>
-        <div class="pamt">Rp 6 jt <span>/ proyek</span></div>
+        <div class="pc-badge">Terpopuler</div>
+        <div class="pc-tier">Growth</div>
+        <div class="pc-price">Rp 6 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>5–7 halaman toko online</li>
-          <li><div class="chk"></div>Katalog produk (20–100 item)</li>
-          <li><div class="chk"></div>Filter & search produk</li>
-          <li><div class="chk"></div>Checkout via WhatsApp otomatis</li>
-          <li><div class="chk"></div>SEO on-page basic</li>
-          <li><div class="chk"></div>3x revisi + garansi 1 bulan</li>
+          <li><div class="chk">✓</div>5–7 halaman toko online</li>
+          <li><div class="chk">✓</div>Katalog produk (20–100 item)</li>
+          <li><div class="chk">✓</div>Filter & search produk</li>
+          <li><div class="chk">✓</div>Checkout via WhatsApp otomatis</li>
+          <li><div class="chk">✓</div>SEO on-page basic</li>
+          <li><div class="chk">✓</div>3x revisi + garansi 1 bulan</li>
         </ul>
-        <button class="pbtn pbtn-f btn-order" data-paket="Growth Ecommerce">Pilih Growth</button>
+        <button class="pbtn pbtn-f" onclick="orderWA('Growth E-Commerce')">Pilih Growth</button>
       </div>
       <div class="pc">
-        <div class="ptier">Ultimate</div>
-        <div class="pamt">Rp 12 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Ultimate</div>
+        <div class="pc-price">Rp 12 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Keranjang belanja otomatis</li>
-          <li><div class="chk"></div>Payment gateway (Xendit/Midtrans)</li>
-          <li><div class="chk"></div>QRIS, e-wallet, transfer, CC</li>
-          <li><div class="chk"></div>Dashboard admin lengkap</li>
-          <li><div class="chk"></div>Email notifikasi otomatis</li>
-          <li><div class="chk"></div>5x revisi + garansi 1,5 bulan</li>
+          <li><div class="chk">✓</div>Keranjang belanja otomatis</li>
+          <li><div class="chk">✓</div>Payment gateway (Xendit/Midtrans)</li>
+          <li><div class="chk">✓</div>QRIS, e-wallet, transfer, CC</li>
+          <li><div class="chk">✓</div>Dashboard admin lengkap</li>
+          <li><div class="chk">✓</div>Email notifikasi otomatis</li>
+          <li><div class="chk">✓</div>5x revisi + garansi 1,5 bulan</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Ecommerce">Pilih Ultimate</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Ultimate E-Commerce')">Pilih Ultimate</button>
       </div>
     </div>
-  </div>
 
-  <div class="ppanel" id="p-cs">
-    <div class="pgrid">
+    <!-- Tour & Travel -->
+    <div class="ppanel" id="p-tt">
       <div class="pc">
-        <div class="ptier">Basic</div>
-        <div class="pamt">Rp 5 jt <span>/ proyek</span></div>
+        <div class="pc-tier">Starter</div>
+        <div class="pc-price">Rp 2 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Sistem 1 modul utama</li>
-          <li><div class="chk"></div>CRUD data lengkap</li>
-          <li><div class="chk"></div>Login & manajemen user</li>
-          <li><div class="chk"></div>Dashboard ringkasan data</li>
-          <li><div class="chk"></div>Hosting VPS / shared</li>
-          <li><div class="chk"></div>2x revisi + garansi 1 bulan</li>
+          <li><div class="chk">✓</div>Landing page paket wisata</li>
+          <li><div class="chk">✓</div>Daftar paket (harga & itinerary)</li>
+          <li><div class="chk">✓</div>Tombol booking ke WhatsApp</li>
+          <li><div class="chk">✓</div>Galeri foto destinasi</li>
+          <li><div class="chk">✓</div>Domain + hosting 6 bulan</li>
+          <li><div class="chk">✓</div>Mobile-friendly</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Starter Custom System">Pilih Starter</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Starter Tour & Travel')">Pilih Starter</button>
       </div>
       <div class="pc hot">
-        <div class="hbadge">Recommended</div>
-        <div class="ptier">Growth</div>
-        <div class="pamt">Rp 10 jt <span>/ proyek</span></div>
+        <div class="pc-badge">Terpopuler</div>
+        <div class="pc-tier">Growth</div>
+        <div class="pc-price">Rp 4,5 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Sistem 3-5 modul (klien, karyawan, dll)</li>
-          <li><div class="chk"></div>Role-based access (admin, staff, dll)</li>
-          <li><div class="chk"></div>Laporan & export PDF/Excel</li>
-          <li><div class="chk"></div>Notifikasi email otomatis</li>
-          <li><div class="chk"></div>API integration (opsional)</li>
-          <li><div class="chk"></div>3x revisi + garansi 1,5 bulan</li>
+          <li><div class="chk">✓</div>Multi halaman (Home, Paket, About)</li>
+          <li><div class="chk">✓</div>Filter paket wisata</li>
+          <li><div class="chk">✓</div>Form booking + WhatsApp</li>
+          <li><div class="chk">✓</div>Testimoni pelanggan</li>
+          <li><div class="chk">✓</div>SEO dasar</li>
+          <li><div class="chk">✓</div>Hosting 1 tahun</li>
         </ul>
-        <button class="pbtn pbtn-f btn-order" data-paket="Growth Custom System">Pilih Growth</button>
+        <button class="pbtn pbtn-f" onclick="orderWA('Growth Tour & Travel')">Pilih Growth</button>
       </div>
       <div class="pc">
-        <div class="ptier">Ultimate</div>
-        <div class="pamt">Custom <span>/ hubungi kami</span></div>
+        <div class="pc-tier">Ultimate</div>
+        <div class="pc-price">Rp 8 jt <span>/ proyek</span></div>
         <ul class="plist">
-          <li><div class="chk"></div>Modul tak terbatas</li>
-          <li><div class="chk"></div>Integrasi payment & third-party API</li>
-          <li><div class="chk"></div>Real-time monitoring & notifikasi</li>
-          <li><div class="chk"></div>Dedicated server setup</li>
-          <li><div class="chk"></div>SLA & maintenance kontrak</li>
-          <li><div class="chk"></div>Revisi unlimited selama development</li>
+          <li><div class="chk">✓</div>Sistem booking online</li>
+          <li><div class="chk">✓</div>Jadwal & kuota trip</li>
+          <li><div class="chk">✓</div>Pembayaran DP / full</li>
+          <li><div class="chk">✓</div>Dashboard admin</li>
+          <li><div class="chk">✓</div>Email notifikasi otomatis</li>
+          <li><div class="chk">✓</div>Integrasi payment gateway</li>
         </ul>
-        <button class="pbtn pbtn-o btn-order" data-paket="Diskusi Dulu">Diskusi Dulu</button>
+        <button class="pbtn pbtn-o" onclick="orderWA('Ultimate Tour & Travel')">Pilih Ultimate</button>
+      </div>
+    </div>
+
+    <!-- Custom System -->
+    <div class="ppanel" id="p-cs">
+      <div class="pc">
+        <div class="pc-tier">Basic</div>
+        <div class="pc-price">Rp 5 jt <span>/ proyek</span></div>
+        <ul class="plist">
+          <li><div class="chk">✓</div>Sistem 1 modul utama</li>
+          <li><div class="chk">✓</div>CRUD data lengkap</li>
+          <li><div class="chk">✓</div>Login & manajemen user</li>
+          <li><div class="chk">✓</div>Dashboard ringkasan data</li>
+          <li><div class="chk">✓</div>Hosting VPS / shared</li>
+          <li><div class="chk">✓</div>2x revisi + garansi 1 bulan</li>
+        </ul>
+        <button class="pbtn pbtn-o" onclick="orderWA('Basic Custom System')">Pilih Basic</button>
+      </div>
+      <div class="pc hot">
+        <div class="pc-badge">Recommended</div>
+        <div class="pc-tier">Growth</div>
+        <div class="pc-price">Rp 10 jt <span>/ proyek</span></div>
+        <ul class="plist">
+          <li><div class="chk">✓</div>Sistem 3–5 modul (klien, karyawan, dll)</li>
+          <li><div class="chk">✓</div>Role-based access (admin, staff, dll)</li>
+          <li><div class="chk">✓</div>Laporan & export PDF/Excel</li>
+          <li><div class="chk">✓</div>Notifikasi email otomatis</li>
+          <li><div class="chk">✓</div>API integration (opsional)</li>
+          <li><div class="chk">✓</div>3x revisi + garansi 1,5 bulan</li>
+        </ul>
+        <button class="pbtn pbtn-f" onclick="orderWA('Growth Custom System')">Pilih Growth</button>
+      </div>
+      <div class="pc">
+        <div class="pc-tier">Ultimate</div>
+        <div class="pc-price">Custom <span>/ hubungi kami</span></div>
+        <ul class="plist">
+          <li><div class="chk">✓</div>Modul tak terbatas</li>
+          <li><div class="chk">✓</div>Integrasi payment & third-party API</li>
+          <li><div class="chk">✓</div>Real-time monitoring & notifikasi</li>
+          <li><div class="chk">✓</div>Dedicated server setup</li>
+          <li><div class="chk">✓</div>SLA & maintenance kontrak</li>
+          <li><div class="chk">✓</div>Revisi unlimited selama development</li>
+        </ul>
+        <button class="pbtn pbtn-o" onclick="orderWA('Ultimate Custom System - Diskusi Dulu')">Diskusi Dulu</button>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="ppanel" id="p-tt">
-  <div class="pgrid">
-
-    <div class="pc">
-      <div class="ptier">Starter</div>
-      <div class="pamt">Rp 2 jt <span>/ proyek</span></div>
-      <ul class="plist">
-        <li><div class="chk"></div>Landing page paket wisata</li>
-        <li><div class="chk"></div>Daftar paket (harga & itinerary)</li>
-        <li><div class="chk"></div>Tombol booking ke WhatsApp</li>
-        <li><div class="chk"></div>Galeri foto destinasi</li>
-        <li><div class="chk"></div>Domain + hosting 6 bulan</li>
-        <li><div class="chk"></div>Mobile-friendly</li>
-      </ul>
-      <button class="pbtn pbtn-o btn-order" data-paket="Starter Tour & Travel">Pilih Starter</button>
-    </div>
-
-    <div class="pc hot">
-      <div class="hbadge">Terpopuler</div>
-      <div class="ptier">Growth</div>
-      <div class="pamt">Rp 4,5 jt <span>/ proyek</span></div>
-      <ul class="plist">
-        <li><div class="chk"></div>Multi halaman (Home, Paket, About)</li>
-        <li><div class="chk"></div>Filter paket wisata</li>
-        <li><div class="chk"></div>Form booking + WhatsApp</li>
-        <li><div class="chk"></div>Testimoni pelanggan</li>
-        <li><div class="chk"></div>SEO dasar</li>
-        <li><div class="chk"></div>Hosting 1 tahun</li>
-      </ul>
-      <button class="pbtn pbtn-f btn-order" data-paket="Growth Tour & Travel">Pilih Growth</button>
-    </div>
-
-    <div class="pc">
-      <div class="ptier">Ultimate</div>
-      <div class="pamt">Rp 8 jt <span>/ proyek</span></div>
-      <ul class="plist">
-        <li><div class="chk"></div>Sistem booking online</li>
-        <li><div class="chk"></div>Jadwal & kuota trip</li>
-        <li><div class="chk"></div>Pembayaran DP / full</li>
-        <li><div class="chk"></div>Dashboard admin</li>
-        <li><div class="chk"></div>Email notifikasi otomatis</li>
-        <li><div class="chk"></div>Integrasi payment gateway</li>
-      </ul>
-      <button class="pbtn pbtn-o btn-order" data-paket="Ultimate Tour & Travel">Pilih Ultimate</button>
-    </div>
-
+<!-- ===== PROSES ===== -->
+<section id="proses">
+  <div class="header">
+    <div class="section-tag">Proses Kerja</div>
+    <h2 class="section-title">Simpel, cepat, dan transparan</h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">Kamu nggak perlu paham teknis. Dari diskusi sampai live, semuanya kita handle bareng.</p>
   </div>
-</div>
-</sec>
-
-<div class="divider"></div>
-
-<sec id="proses">
-  <div class="stag">Proses Kerja</div>
-  <h2>Simpel, cepat,<br>dan transparan</h2>
-  <p class="ssub">Kamu nggak perlu paham teknis. Dari diskusi sampai live, semuanya kita handle bareng.</p>
-  <div class="psteps">
-    <div class="pstep"><div class="psn">01</div><h3>Konsultasi</h3><p>Diskusi kebutuhan, tujuan, dan budget via WhatsApp atau Meet. Gratis, tanpa komitmen.</p></div>
-    <div class="pstep"><div class="psn">02</div><h3>Proposal & DP</h3><p>Kita kirim proposal lengkap + estimasi waktu. Proyek mulai setelah DP 50%.</p></div>
-    <div class="pstep"><div class="psn">03</div><h3>Pengerjaan</h3><p>Update progress rutin. Kamu bisa pantau dan kasih masukan kapan saja.</p></div>
-    <div class="pstep"><div class="psn">04</div><h3>Revisi & Live</h3><p>Revisi sesuai paket, lalu langsung live. Garansi maintenance hingga 1,5 bulan.</p></div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h4>Konsultasi</h4>
+      <p>Diskusi kebutuhan, tujuan, dan budget via WhatsApp atau Meet. Gratis, tanpa komitmen.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h4>Proposal & DP</h4>
+      <p>Kita kirim proposal lengkap + estimasi waktu. Proyek mulai setelah DP 50%.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h4>Pengerjaan</h4>
+      <p>Update progress rutin. Kamu bisa pantau dan kasih masukan kapan saja.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <h4>Revisi & Live</h4>
+      <p>Revisi sesuai paket, lalu langsung live. Garansi maintenance hingga 1,5 bulan.</p>
+    </div>
   </div>
-</sec>
+</section>
 
-<div class="divider"></div>
-
-<sec id="testimoni">
-  <div class="stag">Testimoni</div>
-  <h2>Kata mereka yang<br>sudah kerja bareng</h2>
-  <p class="ssub">Hasil nyata dari klien yang percayakan proyek digitalnya ke DevStudio.</p>
+<!-- ===== TESTIMONI ===== -->
+<section id="testimoni">
+  <div class="header">
+    <div class="section-tag">Testimoni</div>
+    <h2 class="section-title">Kata mereka yang sudah kerja bareng</h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">Hasil nyata dari klien yang percayakan proyek digitalnya ke DevStudio.</p>
+  </div>
   <div class="tgrid">
     <div class="tc">
-      <div class="stars">★★★★★</div>
-      <p class="tq">"Company profile kami jadi jauh lebih profesional. Banyak calon klien langsung terkesan saat pertama buka website kami."</p>
-      <div class="ta"><div class="av">RH</div><div><div class="an">Rudi H.</div><div class="ar">Owner, CV Maju Bersama</div></div></div>
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-quote">"Company profile kami jadi jauh lebih profesional. Banyak calon klien langsung terkesan saat pertama buka website kami."</p>
+      <div class="tc-author">
+        <div class="tc-av">RH</div>
+        <div>
+          <div class="tc-name">Rudi H.</div>
+          <div class="tc-role">Owner, CV Maju Bersama</div>
+        </div>
+      </div>
     </div>
     <div class="tc">
-      <div class="stars">★★★★★</div>
-      <p class="tq">"Sistem monitoring karyawan yang dibuat beneran memudahkan operasional kami. Fitur role-based-nya sangat membantu."</p>
-      <div class="ta"><div class="av">DA</div><div><div class="an">Dian A.</div><div class="ar">HRD Manager, PT Logistik Cepat</div></div></div>
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-quote">"Sistem monitoring karyawan yang dibuat beneran memudahkan operasional kami. Fitur role-based-nya sangat membantu."</p>
+      <div class="tc-author">
+        <div class="tc-av">DA</div>
+        <div>
+          <div class="tc-name">Dian A.</div>
+          <div class="tc-role">HRD Manager, PT Logistik Cepat</div>
+        </div>
+      </div>
     </div>
     <div class="tc">
-      <div class="stars">★★★★★</div>
-      <p class="tq">"Landing page-nya berhasil boost penjualan kursus saya 3x lipat dalam sebulan pertama. Worth every penny!"</p>
-      <div class="ta"><div class="av">BN</div><div><div class="an">Budi N.</div><div class="ar">Founder, EduSkill Academy</div></div></div>
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-quote">"Landing page-nya berhasil boost penjualan kursus saya 3x lipat dalam sebulan pertama. Worth every penny!"</p>
+      <div class="tc-author">
+        <div class="tc-av">BN</div>
+        <div>
+          <div class="tc-name">Budi N.</div>
+          <div class="tc-role">Founder, EduSkill Academy</div>
+        </div>
+      </div>
     </div>
   </div>
-</sec>
+</section>
 
-<div class="cta-box">
-  <div class="stag" style="margin-bottom:.6rem">Mulai sekarang</div>
-  <h2>Siap bawa bisnis kamu<br>ke level berikutnya?</h2>
+<!-- ===== CTA + FOOTER ===== -->
+<footer class="cta-section">
+  <h2>Siap bawa bisnis kamu ke level berikutnya?</h2>
   <p>Konsultasi gratis, tanpa tekanan. Kita diskusikan kebutuhan kamu dan carikan solusi terbaik.</p>
-  <div class="ctas">
-    <a href="https://wa.link/ofc9h6" class="btn-p">💬 Chat via WhatsApp</a>
-    <a href="#harga" class="btn-o">Lihat Paket Harga</a>
+  <a href="https://wa.link/ofc9h6" target="_blank" class="btn-wa">
+    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+  </a>
+  <div class="footer-bottom">
+    <span>© 2026 DevStudio. Dibuat serius untuk bisnis yang serius.</span>
+    <div class="footer-links">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
   </div>
-</div>
-
-<footer>
-  <div class="logo">Dev<span>Studio</span></div>
-  <div class="fc">© 2026 DevStudio. Dibuat serius untuk bisnis yang serius.</div>
 </footer>
 
 <script>
-  let engagedTracked = false;
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // tutup mobile menu jika terbuka
+    closeMobileMenu();
+  });
+});
 
-  window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
+/* ===== HAMBURGER / MOBILE MENU ===== */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  if (scrollPercent > 50 && !engagedTracked) {
-    fbq('trackCustom', 'EngagedView');
-    engagedTracked = true;
+function openMobileMenu() {
+  mobileMenu.style.display = 'block';
+  requestAnimationFrame(() => {
+    mobileMenu.classList.add('open');
+  });
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    if (!mobileMenu.classList.contains('open')) {
+      mobileMenu.style.display = 'none';
+    }
+  }, 350);
+}
+
+hamburger.addEventListener('click', () => {
+  if (mobileMenu.classList.contains('open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
   }
 });
 
+// Tutup saat klik overlay (di luar panel)
+mobileMenu.addEventListener('click', function(e) {
+  if (e.target === mobileMenu) closeMobileMenu();
+});
 
-function showTab(id,el){
-  document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('on'));
-  document.getElementById('p-'+id).classList.add('on');
-  el.classList.add('on');
+// Tutup saat ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
 
-  // ===== TRACK EVENT =====
-  let packageName = '';
+/* ===== PRICING TABS ===== */
+function showTab(id, el) {
 
-  if(id === 'lp') packageName = 'landing_page';
-  if(id === 'cp') packageName = 'company_profile';
-  if(id === 'ec') packageName = 'ecommerce';
-  if(id === 'cs') packageName = 'custom_system';
-  if(id === 'tt') packageName = 'tour_travel';
+  // mapping nama paket biar enak dibaca di pixel
+  const map = {
+    lp: 'Landing Page',
+    cp: 'Company Profile',
+    ec: 'E-Commerce',
+    tt: 'Tour & Travel',
+    cs: 'Custom System'
+  };
 
-  fbq('trackCustom', 'ViewPackage', {
-    package: packageName
+  // 🔥 TRACK VIEW PACKAGE (kategori)
+  if (typeof fbq !== 'undefined') {
+    fbq('trackCustom', 'ViewPackage', {
+      content_name: map[id] || id
+    });
+  }
+
+  document.querySelectorAll('.ppanel').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.ptab').forEach(b => {
+    b.classList.remove('on');
+    b.classList.add('off');
   });
+
+  el.classList.add('on');
+  el.classList.remove('off');
+
+  const panel = document.getElementById('p-' + id);
+  panel.classList.add('on');
 }
 
-function orderWA(paket){
-  const nomor = "6281226622421";
+/* ===== WHATSAPP ORDER ===== */
+function orderWA(paket) {
 
-  const pesan = `Halo, saya tertarik dengan paket ${paket}.
+  // 🔥 1. ViewPackage
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Contact', {
+      content_name: paket
+    });
+  }
+
+  const nomor = '6281226622421';
+  const pesan = `Halo, saya tertarik dengan paket *${paket}*.
 
 Bisa bantu jelaskan detail fitur, harga, dan estimasi pengerjaan?
 
 Terima kasih 🙏`;
 
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Contact', { package: paket });
-    console.log("CONTACT:", paket);
-  }
-
   const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
   window.open(url, '_blank');
 }
 
-// ambil semua tombol
-document.querySelectorAll('.btn-order').forEach(btn=>{
-  btn.addEventListener('click', function(e){
-    e.preventDefault(); // biar gak reload
-    const paket = this.dataset.paket;
-    orderWA(paket);
-  });
-});
+/* ===== COUNTER ANIMATION ===== */
+const counters = document.querySelectorAll('.counter');
 
-// ===== COUNTER ANIMATION =====
-const counters = document.querySelectorAll('.sn');
-
-const animateCounter = (el) => {
-  const target = +el.getAttribute('data-target');
-  const suffix = el.getAttribute('data-suffix') || '';
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1400;
+  const step = 16;
+  const steps = duration / step;
+  const increment = target / steps;
   let current = 0;
-  const increment = target / 60;
 
-  const update = () => {
+  const timer = setInterval(() => {
     current += increment;
-
-    if (current < target) {
-      el.innerText = Math.floor(current) + suffix;
-      requestAnimationFrame(update);
+    if (current >= target) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
     } else {
-      el.innerText = target + suffix;
+      el.textContent = Math.floor(current) + suffix;
     }
-  };
+  }, step);
+}
 
-  update();
-};
-
-const observer = new IntersectionObserver(entries => {
+const counterObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       animateCounter(entry.target);
-      observer.unobserve(entry.target);
+      counterObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.6 });
 
-counters.forEach(counter => observer.observe(counter));
+counters.forEach(c => counterObserver.observe(c));
+
+/* ===== META PIXEL (engaged view) ===== */
+let engagedTracked = false;
+window.addEventListener('scroll', () => {
+  const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  if (scrollPct > 50 && !engagedTracked) {
+    engagedTracked = true;
+    if (typeof fbq !== 'undefined') fbq('trackCustom', 'EngagedView');
+  }
+}, { passive: true });
 </script>
 </body>
 </html>
