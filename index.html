@@ -615,12 +615,6 @@ section { scroll-margin-top: 72px; }
 
 #testimoni .header { text-align: center; margin-bottom: 2.5rem; }
 
-.tgrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
-
 .tc {
   background: var(--white);
   border: 1px solid var(--slate-200);
@@ -731,6 +725,144 @@ section { scroll-margin-top: 72px; }
   h1 { font-size: 2rem; }
   .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
   .pc-price { font-size: 1.5rem; }
+}
+
+#portofolio {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+}
+
+.port-filter {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pf-btn {
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--slate-200);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.pf-btn.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+.port-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.port-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .25s;
+
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.port-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.port-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.port-info {
+  padding: 1.2rem;
+}
+
+.port-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: .3rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15,23,42,.7);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+}
+
+.modal.on {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  max-width: 520px;
+  width: 90%;
+  position: relative;
+  animation: pop .25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* TESTIMONI AUTO SLIDE */
+.twrap {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.ttrack {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: scrollTesti 30s linear infinite;
+}
+
+.tc {
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+}
+
+/* animasi jalan */
+@keyframes scrollTesti {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 </style>
 </head>
@@ -1163,6 +1295,84 @@ section { scroll-margin-top: 72px; }
   </div>
 </section>
 
+<section id="portofolio">
+  <div class="header" style="text-align:center;">
+    <div class="section-tag">Portofolio</div>
+    <h2 class="section-title">Karya Terbaik Kami</h2>
+    <p class="section-sub" style="margin:0 auto;">
+      Beberapa project yang telah membantu klien berkembang.
+    </p>
+  </div>
+
+  <!-- FILTER -->
+  <div class="port-filter">
+    <button class="pf-btn active" onclick="setCategory('all', this)">All</button>
+    <button class="pf-btn" onclick="setCategory('web', this)">Website</button>
+    <button class="pf-btn" onclick="setCategory('app', this)">Aplikasi</button>
+    <button class="pf-btn" onclick="setCategory('system', this)">System</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="port-grid">
+
+    <!-- CARD 1 -->
+    <div class="port-card"
+      data-cat="app"
+      data-title="MathQuiz App"
+      data-desc="Aplikasi edukasi interaktif untuk membantu siswa memahami matematika dengan lebih mudah."
+      data-result="Digunakan oleh 1000+ siswa"
+      data-link="https://example.com"
+      onclick="openModal(this)">
+
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800">
+      <div class="port-info">
+        <div class="port-tag">Aplikasi</div>
+        <h3>MathQuiz</h3>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="port-card"
+      data-cat="web"
+      data-title="Company Profile"
+      data-desc="Website profesional untuk meningkatkan kredibilitas bisnis dan menarik klien baru."
+      data-result="Meningkatkan inquiry 2x"
+      data-link="https://example.com"
+      onclick="openModal(this)">
+
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800">
+      <div class="port-info">
+        <div class="port-tag">Website</div>
+        <h3>Company Website</h3>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="port-card"
+      data-cat="system"
+      data-title="Dashboard Logistik"
+      data-desc="Sistem internal untuk monitoring operasional logistik secara real-time."
+      data-result="Efisiensi operasional naik 40%"
+      data-link="https://example.com"
+      onclick="openModal(this)">
+
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800">
+      <div class="port-info">
+        <div class="port-tag">System</div>
+        <h3>Logistik System</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LOAD MORE -->
+  <div style="text-align:center;margin-top:2rem;">
+    <button id="loadBtn" class="btn-primary" onclick="loadMore()">
+      Lihat Lebih Banyak
+    </button>
+  </div>
+</section>
+
 <!-- ===== TESTIMONI ===== -->
 <section id="testimoni">
   <div class="header">
@@ -1170,41 +1380,79 @@ section { scroll-margin-top: 72px; }
     <h2 class="section-title">Kata mereka yang sudah kerja bareng</h2>
     <p class="section-sub" style="margin:0 auto;text-align:center;">Hasil nyata dari klien yang percayakan proyek digitalnya ke DevStudio.</p>
   </div>
-  <div class="tgrid">
+  <div class="twrap">
+  <div class="ttrack">
+
+    <!-- ASLI -->
     <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <p class="tc-quote">"Company profile kami jadi jauh lebih profesional. Banyak calon klien langsung terkesan saat pertama buka website kami."</p>
+      <p class="tc-quote">"Company profile kami jadi jauh lebih profesional. Banyak calon klien langsung terkesan."</p>
       <div class="tc-author">
         <div class="tc-av">RH</div>
         <div>
           <div class="tc-name">Rudi H.</div>
-          <div class="tc-role">Owner, CV Maju Bersama</div>
+          <div class="tc-role">Owner</div>
         </div>
       </div>
     </div>
+
     <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <p class="tc-quote">"Sistem monitoring karyawan yang dibuat beneran memudahkan operasional kami. Fitur role-based-nya sangat membantu."</p>
+      <p class="tc-quote">"Sistem monitoring yang dibuat sangat membantu operasional kami."</p>
       <div class="tc-author">
         <div class="tc-av">DA</div>
         <div>
           <div class="tc-name">Dian A.</div>
-          <div class="tc-role">HRD Manager, PT Logistik Cepat</div>
+          <div class="tc-role">HRD</div>
         </div>
       </div>
     </div>
+
     <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <p class="tc-quote">"Landing page-nya berhasil boost penjualan kursus saya 3x lipat dalam sebulan pertama. Worth every penny!!"</p>
+      <p class="tc-quote">"Landing page-nya berhasil boost penjualan 3x lipat!"</p>
       <div class="tc-author">
         <div class="tc-av">BN</div>
         <div>
           <div class="tc-name">Budi N.</div>
-          <div class="tc-role">Founder, EduSkill Academy</div>
+          <div class="tc-role">Founder</div>
         </div>
       </div>
     </div>
+
+    <!-- DUPLIKAT -->
+    <div class="tc">
+      <p class="tc-quote">"Company profile kami jadi jauh lebih profesional. Banyak calon klien langsung terkesan."</p>
+      <div class="tc-author">
+        <div class="tc-av">RH</div>
+        <div>
+          <div class="tc-name">Rudi H.</div>
+          <div class="tc-role">Owner</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc">
+      <p class="tc-quote">"Sistem monitoring yang dibuat sangat membantu operasional kami."</p>
+      <div class="tc-author">
+        <div class="tc-av">DA</div>
+        <div>
+          <div class="tc-name">Dian A.</div>
+          <div class="tc-role">HRD</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc">
+      <p class="tc-quote">"Landing page-nya berhasil boost penjualan 3x lipat!"</p>
+      <div class="tc-author">
+        <div class="tc-av">BN</div>
+        <div>
+          <div class="tc-name">Budi N.</div>
+          <div class="tc-role">Founder</div>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
 </section>
 
 <!-- ===== CTA + FOOTER ===== -->
@@ -1218,6 +1466,25 @@ section { scroll-margin-top: 72px; }
     <span>© 2026 DevStudio. Dibuat serius untuk bisnis yang serius</span>
   </div>
 </footer>
+
+<div id="portModal" class="modal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+
+    <div class="modal-close" onclick="closeModal()">&times;</div>
+
+    <div id="m-tag" class="port-tag"></div>
+    <h2 id="m-title"></h2>
+
+    <p id="m-desc" style="margin:1rem 0;"></p>
+
+    <ul id="m-result" style="margin-bottom:1.5rem;"></ul>
+
+    <a id="m-link" target="_blank" class="btn-primary">
+      🔗 Lihat Website
+    </a>
+
+  </div>
+</div>
 
 <script>
 /* ===== SMOOTH SCROLL ===== */
@@ -1372,6 +1639,73 @@ window.addEventListener('scroll', () => {
     if (typeof fbq !== 'undefined') fbq('trackCustom', 'EngagedView');
   }
 }, { passive: true });
+
+let currentCategory = 'all';
+let visibleCount = 6;
+const step = 3;
+
+function updateDisplay() {
+  const cards = document.querySelectorAll('.port-card');
+  let filtered = [];
+
+  cards.forEach(card => {
+    const cat = card.dataset.cat;
+
+    if (currentCategory === 'all' || cat === currentCategory) {
+      filtered.push(card);
+      card.style.display = 'none';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  filtered.slice(0, visibleCount).forEach(card => {
+    card.style.display = 'block';
+  });
+
+  document.getElementById('loadBtn').style.display =
+    visibleCount >= filtered.length ? 'none' : 'inline-block';
+}
+
+function setCategory(cat, el) {
+  currentCategory = cat;
+  visibleCount = 6;
+
+  document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+
+  updateDisplay();
+}
+
+function loadMore() {
+  visibleCount += step;
+  updateDisplay();
+}
+
+updateDisplay();
+
+function openModal(el) {
+  document.getElementById('m-title').textContent = el.dataset.title;
+  document.getElementById('m-desc').textContent = el.dataset.desc;
+  document.getElementById('m-link').href = el.dataset.link;
+  document.getElementById('m-tag').textContent =
+    el.querySelector('.port-tag').textContent;
+
+  const resultList = document.getElementById('m-result');
+  resultList.innerHTML = `<li>✔ ${el.dataset.result}</li>`;
+
+  document.getElementById('portModal').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  const modal = document.getElementById('portModal');
+
+  if (!e || e.target === modal) {
+    modal.classList.remove('on');
+    document.body.style.overflow = '';
+  }
+}
 </script>
 </body>
 </html>
